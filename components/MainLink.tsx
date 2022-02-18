@@ -26,7 +26,7 @@ const MainLink: React.FC = () => {
 		);
 };
 
-const SubLink: React.FC<{ text: string, href: string }> = ({ text, href="/" }) => {
+const SubLink: React.FC<{ text: string, href?: string }> = ({ text, href="/" }) => {
 	const navigate = useRouter();
 	const onRedirect = (href: string) => {
 		navigate.push(href);
