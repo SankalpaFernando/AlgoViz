@@ -405,7 +405,7 @@ const MergeSort: React.FC = () => {
 				inputClassname="inputGroup"
 				infoComponent={
 					<>
-						Bubble Sort is the very basic mechanism that been used to sort an Array. Since the Bubble Sort
+						Merge Sort is the very basic mechanism that been used to sort an Array. Since the Bubble Sort
 						Algorithm is simple to implement it has been used to introduce the concept of sorting. <br />
 						<br />
 						<b>Best Case Time Complexity :</b>{" "}
@@ -441,27 +441,3 @@ const MergeSort: React.FC = () => {
 };
 
 export default MergeSort;
-
-// console.log("🚀 ~ file: MergeSort.tsx ~ line 262 ~ positionTwo", positionTwo,positionThree,positionFour)
-// 				const arrOne = array[positionFour+1][positionTwo + 1];
-// 				const arrTwo = array[positionFour+1][positionTwo+2];
-// 				if (arrOne[0] > arrTwo[0]) {
-// 					array[positionFour][positionThree][position] = arrTwo[0];
-// 					array[positionFour+1][positionTwo+2].shift();
-// 				} else {
-// 					array[positionFour-1][positionThree][position] = arrOne[0];
-// 					array[positionFour+1][positionTwo+1].shift();
-// 				}
-// 				setPosition(position + 1);
-// 				setArray([...array]);
-// 				if (array[2][0].length==0 && array[2][1].length==0 && positionTwo == -1) {
-// 					setPositionTwo(positionTwo + 2);
-// 					setPositionThree(1);
-// 					setPosition(0)
-// 				}
-// 				if (array[2][0].length == 0 && array[2][1].length && array[2][2].length && array[2][3].length) {
-// 					setPositionTwo(-1);
-// 					setPositionThree(0Z);
-// 					setPositionFour(0);
-// 					setPosition(0);
-// 				}
