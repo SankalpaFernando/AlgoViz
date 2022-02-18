@@ -1,0 +1,40 @@
+
+.topLink{
+  display: flex;
+  gap: 1rem;
+  cursor: pointer;
+  &>p{
+    margin: .2rem;
+    &:hover{
+      color: #3ab886;
+    }
+  }
+}
+.icon{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  &:hover{
+
+  }
+}
+.content{
+  margin-left: 1.5rem;
+  &>.subNav,&>.activeSubNav{
+    border-radius: 6px;
+    &:hover{
+      background-color: #e6fcf5;
+      color: #3ab886;
+      cursor: pointer;
+    }
+    &>p{
+      margin: .5rem 2rem;
+      padding: .5rem 0;
+
+    }
+  }
+  &>.activeSubNav{
+    background-color: #e6fcf5;
+    color: #3ab886;
+  }
+}

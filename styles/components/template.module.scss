@@ -1,0 +1,33 @@
+.inline {
+	display: flex;
+	flex-direction: row;
+	flex-wrap: wrap;
+	align-items: center;
+	justify-content: center;
+	width: 70%;
+	margin: 1rem auto !important;
+}
+.inputGroup {
+	text-align: center;
+	justify-content: center;
+	align-items: center;
+	display: flex;
+	width: 70%;
+	margin: 3rem auto !important;
+	flex-basis: 2rem;
+}
+@media screen and (max-width: 500px) {
+	.inputGroup {
+		width: 90% !important;
+	}
+}
+.infoHolder {
+	width: 40%;
+	margin: 3rem auto !important;
+}
+
+@media screen and (max-width: 1350px) {
+	.infoHolder {
+		width: 70%;
+	}
+}

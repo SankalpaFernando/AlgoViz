@@ -1,0 +1,14 @@
+.btnGroup {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	margin-top: 4rem !important;
+}
+@media screen and (max-width: 500px) {
+	.btnGroup {
+		width: 50%;
+		margin: 4rem auto !important;
+		display: grid;
+		grid-template-columns: 1fr 1fr;
+	}
+}
