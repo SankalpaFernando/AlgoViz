@@ -1,0 +1,128 @@
+.tutorial {
+	width: 80%;
+	margin: 1rem auto;
+}
+
+.tutorial img {
+	width: 80% !important;
+	margin: 3rem 10% !important;
+	height: 50% !important;
+}
+
+.box {
+	margin: 10px;
+	width: 75px;
+	height: 75px;
+	border: 2px solid #686868;
+	border-radius: 10px;
+	text-align: center;
+	-webkit-box-pack: center;
+	-ms-flex-pack: center;
+	justify-content: center;
+	-webkit-box-align: center;
+	-ms-flex-align: center;
+	align-items: center;
+	display: -webkit-box;
+	display: -ms-flexbox;
+	display: flex;
+}
+
+.blue {
+	margin: 10px;
+	background-color: #ffec99;
+	width: 75px;
+	height: 75px;
+	border: 0;
+	border-radius: 10px;
+	text-align: center;
+	-webkit-box-pack: center;
+	-ms-flex-pack: center;
+	justify-content: center;
+	-webkit-box-align: center;
+	-ms-flex-align: center;
+	align-items: center;
+	display: -webkit-box;
+	display: -ms-flexbox;
+	display: flex;
+}
+
+.green {
+	margin: 10px;
+	background-color: #63e6be;
+	color: #fff !important;
+	color: #2c2c2c;
+	width: 75px;
+	height: 75px;
+	border: 0;
+	border-radius: 10px;
+	text-align: center;
+	-webkit-box-pack: center;
+	-ms-flex-pack: center;
+	justify-content: center;
+	-webkit-box-align: center;
+	-ms-flex-align: center;
+	align-items: center;
+	display: -webkit-box;
+	display: -ms-flexbox;
+	display: flex;
+}
+
+.inline {
+	display: -webkit-box;
+	display: -ms-flexbox;
+	display: flex;
+	-webkit-box-orient: horizontal;
+	-webkit-box-direction: normal;
+	-ms-flex-direction: row;
+	flex-direction: row;
+	-ms-flex-wrap: wrap;
+	flex-wrap: wrap;
+	-webkit-box-align: center;
+	-ms-flex-align: center;
+	align-items: center;
+	-webkit-box-pack: center;
+	-ms-flex-pack: center;
+	justify-content: center;
+	width: 70%;
+	margin: 1rem auto !important;
+}
+
+.btnGroup {
+	display: -webkit-box;
+	display: -ms-flexbox;
+	display: flex;
+	-webkit-box-pack: center;
+	-ms-flex-pack: center;
+	justify-content: center;
+	-webkit-box-align: center;
+	-ms-flex-align: center;
+	align-items: center;
+	margin-top: 4rem !important;
+}
+
+.inputGroup {
+	text-align: center;
+	-webkit-box-pack: center;
+	-ms-flex-pack: center;
+	justify-content: center;
+	-webkit-box-align: center;
+	-ms-flex-align: center;
+	align-items: center;
+	display: -webkit-box;
+	display: -ms-flexbox;
+	display: flex;
+	width: 70%;
+	margin: 3rem auto !important;
+	-ms-flex-preferred-size: 2rem;
+	flex-basis: 2rem;
+}
+
+.textArea {
+	opacity: 0;
+}
+
+.infoHolder {
+	width: 40%;
+	margin: 3rem auto !important;
+}
+/*# sourceMappingURL=mergesort.module.css.map */

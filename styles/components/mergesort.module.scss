@@ -1,0 +1,47 @@
+.box {
+	margin: 10px;
+	width: 75px;
+	height: 75px;
+	border: 2px solid rgb(104, 104, 104);
+	border-radius: 10px;
+	text-align: center;
+	justify-content: center;
+	align-items: center;
+	display: flex;
+}
+.blue {
+	margin: 10px;
+	background-color: #ffec99;
+	width: 75px;
+	height: 75px;
+	border: 0;
+	border-radius: 10px;
+	text-align: center;
+	justify-content: center;
+	align-items: center;
+	display: flex;
+}
+.green {
+	margin: 10px;
+	background-color: #63e6be;
+	color: #fff !important;
+	color: rgb(44, 44, 44);
+	width: 75px;
+	height: 75px;
+	border: 0;
+	border-radius: 10px;
+	text-align: center;
+	justify-content: center;
+	align-items: center;
+	display: flex;
+}
+
+//remove
+.inline {
+	display: flex;
+	flex-direction: row;
+	flex-wrap: wrap;
+	align-items: center;
+	justify-content: center;
+	width: 100%;
+}
