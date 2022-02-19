@@ -35,9 +35,9 @@ const MainLink: React.FC<MainLinkProps> = ({setBarOpen}) => {
 				</div>
 				<Collapse in={opened} transitionDuration={500}>
 					<div className={styles.content}>
-						<SubLink href="/algorithms/bubblesort" setBarOpen={()=>setBarOpen()} text="Bubble Sort" />
-						<SubLink href="/algorithms/mergesort" setBarOpen={()=>setBarOpen()} text="Merge Sort" />
-						<SubLink text="Quick Sort" />
+						<SubLink href="/algorithms/bubblesort" setBarOpen={() => setBarOpen()} text="Bubble Sort" />
+						<SubLink href="/algorithms/mergesort" setBarOpen={() => setBarOpen()} text="Merge Sort" />
+						<SubLink setBarOpen={() => setBarOpen()} text="Quick Sort" />
 					</div>
 				</Collapse>
 			</div>
