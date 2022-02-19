@@ -19,9 +19,14 @@ import { isEqualOrder, onArrayChange, onArraySubmit, isDeepEmpty } from "../../u
 import styles from "../../styles/components/mergesort.module.scss";
 import withTransition from "../../util/withTransition";
 
+type defaultArrayType = {
+	value: number | undefined,
+	sorted: boolean
+}
+
 const MergeSort: React.FC = () => {
 	const notifications = useNotifications();
-	const initArray = [
+	const initArray:defaultArrayType[] = [
 		{ value: 7, sorted: false },
 		{ value: 1, sorted: false },
 		{ value: 5, sorted: false },

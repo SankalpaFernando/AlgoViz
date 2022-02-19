@@ -146,7 +146,7 @@ const BubbleSort: React.FC = (): JSX.Element => {
 	return (
 		<Template
 			headLine="Bubble Sort"
-			inputComponent={
+			inputComponent={() => (
 				<Input
 					onChange={(event: any) =>
 						onArrayChange(event, setUserInput, () => {
@@ -174,7 +174,7 @@ const BubbleSort: React.FC = (): JSX.Element => {
 							<FontAwesomeIcon color="#63E6BE" size="lg" onClick={() => onSubmitArray()} icon={faPlay} />
 						</div>
 					}
-				/>
+				/>)
 			}
 			elementComponent={
 				<>
@@ -195,6 +195,7 @@ const BubbleSort: React.FC = (): JSX.Element => {
 			elementClassname="inline"
 			inputClassname="inputGroup"
 			infoComponent={
+				()=>(
 				<>
 					Bubble Sort is the very basic mechanism that been used to sort an Array. Since the Bubble Sort
 					Algorithm is simple to implement it has been used to introduce the concept of sorting. <br />
@@ -215,7 +216,7 @@ const BubbleSort: React.FC = (): JSX.Element => {
 					<Anchor href="https://www.geeksforgeeks.org/bubble-sort/" target="_blank">
 						For More Info{" "}
 					</Anchor>
-				</>
+				</>)
 			}
 			controls={{
 				onClear,

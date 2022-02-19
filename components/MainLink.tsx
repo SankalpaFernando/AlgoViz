@@ -43,7 +43,6 @@ const MainLink: React.FC<MainLinkProps> = ({setBarOpen}) => {
 			</div>
 		);
 };
-
 const SubLink: React.FC<{ text: string; href: string; setBarOpen:Function }> = ({ text, href = "/",setBarOpen }) => {
 	const navigate = useRouter();
 	const onRedirect = (href: string) => {
