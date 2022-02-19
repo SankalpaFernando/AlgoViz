@@ -2,3 +2,26 @@
 body {
 	font-family: "Nunito" !important;
 }
+.floating { 
+    animation-name: floating;
+    animation-duration: 3s;
+    animation-iteration-count: infinite;
+    animation-timing-function: ease-in-out;
+}
+.floating-rocket{
+	  animation-name: floating-rocket;
+    animation-duration: 4s;
+    animation-iteration-count: infinite;
+    animation-timing-function: linear;
+}
+ 
+@keyframes floating {
+    0% { transform: translate(0,  0px); }
+    50%  { transform: translate(0, 15px); }
+    100%   { transform: translate(0, -0px); }   
+}
+@keyframes floating-rocket {
+    0% { transform: translate(0,  -1px); }
+    50%  { transform: translate(0, 25px); }
+    100%   { transform: translate(0, 1px); }   
+}

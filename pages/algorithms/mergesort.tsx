@@ -6,7 +6,7 @@ import MergeSort from "../../components/algorithms/MergeSort";
 export default () => {
 	return (
 		<>
-			<MergeSort />
+			{MergeSort}
 		</>
 	);
 };

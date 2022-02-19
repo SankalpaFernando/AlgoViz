@@ -17,6 +17,7 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import Template from "../Template";
 import { isEqualOrder, onArrayChange, onArraySubmit, isDeepEmpty } from "../../util/util";
 import styles from "../../styles/components/mergesort.module.scss";
+import withTransition from "../../util/withTransition";
 
 const MergeSort: React.FC = () => {
 	const notifications = useNotifications();
@@ -440,4 +441,4 @@ const MergeSort: React.FC = () => {
 	);
 };
 
-export default MergeSort;
+export default withTransition(MergeSort);
