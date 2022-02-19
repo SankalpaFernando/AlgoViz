@@ -4,15 +4,21 @@ import Head from "next/head";
 import { MantineProvider, NormalizeCSS, GlobalStyles } from "@mantine/core";
 import { NotificationsProvider } from "@mantine/notifications";
 import Layout from "../components/Layout";
+import { AnimatePresence, motion } from "framer-motion";
 import "../styles/index.scss";
 
 export default function App(props: AppProps) {
-	const { Component, pageProps } = props;
+	const { Component, pageProps,router } = props;
+		const variants = {
+			hidden: { opacity: 0, y: 100, x: 0 },
+			enter: { opacity: 1, y: -10, x: 0 },
+			exit: { opacity: 0, y: 0, x: 0 },
+		};
 	return (
 		<>
 			<Head>
-				<title>Mantine next example</title>
-				<meta name="viewport" content="minimum-scale=1, initial-scale=1, width=device-width" />
+				<title>AlgoViz 🚀</title>
+				<meta name="viewport" content="width=900"></meta>
 			</Head>
 			<MantineProvider
 				theme={{
@@ -22,9 +28,29 @@ export default function App(props: AppProps) {
 				<NormalizeCSS />
 				<GlobalStyles />
 				<NotificationsProvider position="top-center">
-					<Layout>
-						<Component {...pageProps} />
-					</Layout>
+					{router.route === "/" ? (
+						<motion.main
+							variants={variants} 
+							initial="hidden"
+							animate="enter"
+							exit="exit"
+							transition={{
+								delay: 1,
+								x: { type: "spring", stiffness: 100 },
+								default: { duration: 2 },
+							}}
+							className=""
+						>
+							<Component {...pageProps} />
+						</motion.main>
+					) : (
+							<Layout>
+					<AnimatePresence exitBeforeEnter>
+								
+							<Component {...pageProps} key={router.route} />
+						</AnimatePresence>
+							</Layout>
+					)}
 				</NotificationsProvider>
 			</MantineProvider>
 		</>

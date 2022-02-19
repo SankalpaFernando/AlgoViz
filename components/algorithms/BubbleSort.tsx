@@ -34,6 +34,7 @@ import { isEmpty, isEqual } from "lodash";
 import Template from "../Template";
 import styles from "../../styles/components/bubblesort.module.scss";
 import { isEqualOrder, onArrayChange, defaultArray, onArraySubmit } from "../../util/util";
+import withTransition from "../../util/withTransition";
 
 const BubbleSort: React.FC = (): JSX.Element => {
 	const notifications = useNotifications();
@@ -230,4 +231,4 @@ const BubbleSort: React.FC = (): JSX.Element => {
 	);
 };
 
-export default BubbleSort;
+export default withTransition(BubbleSort);
