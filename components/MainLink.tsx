@@ -6,11 +6,18 @@ import { Collapse } from "@mantine/core";
 import { useRouter } from "next/router";
 import useSmallScreen from "../util/useSmallScreen";
 
-type MainLinkProps = {
-	setBarOpen:Function
+type SubLinkProps = {
+	href: string;
+	text: string;
 }
 
-const MainLink: React.FC<MainLinkProps> = ({setBarOpen}) => {
+type MainLinkProps = {
+	setBarOpen: Function;
+	mainText: string;
+	subLinks: SubLinkProps[]; 
+}
+
+const MainLink: React.FC<MainLinkProps> = ({setBarOpen,mainText,subLinks}) => {
 	const smallScreen = useSmallScreen();
 
 	const [opened, setOpened] = useState(false);
@@ -30,14 +37,14 @@ const MainLink: React.FC<MainLinkProps> = ({setBarOpen}) => {
 						/>
 					</div>
 					<p style={{ color: opened ? "teal" : "", fontSize: smallScreen ? "1.5rem" : "1.2rem" }}>
-						Sorting Algorithms
+						{mainText}
 					</p>
 				</div>
 				<Collapse in={opened} transitionDuration={500}>
 					<div className={styles.content}>
-						<SubLink href="/algorithms/bubblesort" setBarOpen={() => setBarOpen()} text="Bubble Sort" />
-						<SubLink href="/algorithms/mergesort" setBarOpen={() => setBarOpen()} text="Merge Sort" />
-						<SubLink setBarOpen={() => setBarOpen()} text="Quick Sort" />
+						{subLinks.map(({ href, text }) => (
+							<SubLink key={href} href={href} setBarOpen={() => setBarOpen()} text={text} />
+						))}
 					</div>
 				</Collapse>
 			</div>

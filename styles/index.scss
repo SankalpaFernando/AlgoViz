@@ -13,7 +13,72 @@ body {
     animation-iteration-count: infinite;
     animation-timing-function: linear;
 }
- 
+ .box {
+	margin: 10px;
+	width: 75px;
+	height: 75px;
+	border: 2px solid rgb(104, 104, 104);
+	border-radius: 10px;
+	text-align: center;
+	justify-content: center;
+	align-items: center;
+	display: flex;
+}
+.yellow {
+	margin: 10px;
+	background-color: #ffec99;
+	width: 75px;
+	height: 75px;
+	border: 0;
+	border-radius: 10px;
+	text-align: center;
+	justify-content: center;
+	align-items: center;
+	display: flex;
+}
+.blue {
+	margin: 10px;
+	background-color: #A5D8FF;
+	width: 75px;
+	height: 75px;
+	border: 0;
+	border-radius: 10px;
+	text-align: center;
+	justify-content: center;
+	align-items: center;
+	display: flex;
+}
+.red {
+	margin: 10px;
+	background-color: #FFD8A8;
+	width: 75px;
+	height: 75px;
+	border: 0;
+	border-radius: 10px;
+	text-align: center;
+	justify-content: center;
+	align-items: center;
+	display: flex;
+}
+.green {
+	margin: 10px;
+	background-color: #63e6be;
+	color: #fff !important;
+	color: rgb(44, 44, 44);
+	width: 75px;
+	height: 75px;
+	border: 0;
+	border-radius: 10px;
+	text-align: center;
+	justify-content: center;
+	align-items: center;
+	display: flex;
+}
+.searchText{
+    text-align: center;
+    font-size: 1.2rem;
+    margin: 1.4rem 0;
+}
 @keyframes floating {
     0% { transform: translate(0,  0px); }
     50%  { transform: translate(0, 15px); }

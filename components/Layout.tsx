@@ -24,7 +24,22 @@ const Layout: React.FC = ({ children }): JSX.Element => {
 			fixed
 			navbar={
 				<Navbar padding="md" hiddenBreakpoint="md" hidden={!opened} width={{ sm: 600, lg: 300 }}>
-					<MainLink setBarOpen={() => setOpened(!opened)} />
+					<MainLink
+						mainText="Sorting Algorithms"
+						subLinks={[
+							{ href: "/algorithms/sort/bubblesort", text: "Bubble Sort" },
+							{ href: "/algorithms/sort/mergesort", text: "Merge Sort" },
+							{ href: "/algorithms/sort/insertionsort", text: "Insertion Sort" },
+						]}
+						setBarOpen={() => setOpened(!opened)}
+					/>
+					<MainLink
+						mainText="Searching Algorithms"
+						subLinks={[
+							{ href: "/algorithms/search/binarysearch", text: "Binary Search" },
+						]}
+						setBarOpen={() => setOpened(!opened)}
+					/>
 				</Navbar>
 			}
 			header={
@@ -46,25 +61,22 @@ const Layout: React.FC = ({ children }): JSX.Element => {
 								mr="xl"
 							/>
 						</MediaQuery>
-						<div style={({...style})}>
+						<div style={{ ...style }}>
 							<Text
 								inherit
 								variant="gradient"
 								gradient={{ from: "cyan", to: "teal", deg: 45 }}
 								component="span"
-								style={
-									{
-										cursor: "pointer",
-										fontFamily: "Nunito",
-										textAlign:"center",
-										fontSize: smallScreen ? "2.8rem" : "2.4rem",
-									}
-								}
+								style={{
+									cursor: "pointer",
+									fontFamily: "Nunito",
+									textAlign: "center",
+									fontSize: smallScreen ? "2.8rem" : "2.4rem",
+								}}
 								onClick={() => navigate.push("/")}
 							>
 								AlgoViz <FontAwesomeIcon icon={faRocket} color="#e6fcf5" />
 							</Text>
-
 						</div>
 					</div>
 				</Header>

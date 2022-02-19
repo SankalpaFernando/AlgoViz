@@ -1,0 +1,23 @@
+.inline {
+	display: flex;
+	flex-direction: row;
+	flex-wrap: wrap;
+	align-items: center;
+	justify-content: center;
+	width: 100%;
+}
+.btnGroup {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	margin-top: 4rem !important;
+}
+.inputGroup {
+	text-align: center;
+	justify-content: center;
+	align-items: center;
+	display: flex;
+	width: 70%;
+	margin: 3rem auto !important;
+	flex-basis: 2rem;
+}

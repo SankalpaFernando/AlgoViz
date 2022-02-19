@@ -17,7 +17,6 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import Template from "../Template";
 import { isEqualOrder, onArrayChange, onArraySubmit, isDeepEmpty } from "../../util/util";
 import styles from "../../styles/components/mergesort.module.scss";
-import withTransition from "../../util/withTransition";
 
 type defaultArrayType = {
 	value: number | undefined,
@@ -56,9 +55,6 @@ const MergeSort: React.FC = () => {
 	const [enable, setEnable] = useState(false);
 	const [sortedIndex, setSortedIndex] = useState([]);
 
-	useEffect(() => {
-		console.log(array);
-	}, [array]);
 
 	const mergeLevelTwo = () => {
 		const arrOne = [...array[2][positionTwo + 1]];
@@ -125,35 +121,7 @@ const MergeSort: React.FC = () => {
 		setPosition(position + 1);
 		setArray([...array]);
 	};
-	const onFastPlay = () => {
-		if (fastPlay) {
-			clearInterval(intervalID);
-		} else {
-			let XSpeed;
-			switch (speed) {
-				case 0.25:
-					XSpeed = 2000;
-					break;
-				case 0.5:
-					XSpeed = 1000;
-					break;
-				case 1.5:
-					XSpeed = 50;
-					break;
-				case 2:
-					XSpeed = 25;
-					break;
-				default:
-					XSpeed = 500;
-			}
-			const btnElement = document.getElementById("next-btn");
-			const intID = window.setInterval(() => {
-				btnElement?.click();
-			}, XSpeed);
-			setIntervalID(intID);
-		}
-		setFastPlay(!fastPlay);
-	};
+	
 	const onNext = () => {
 		const sort = (a, b) => {
 			if (a.value === b.value) return 0;
@@ -314,7 +282,7 @@ const MergeSort: React.FC = () => {
 						<div style={{ width: "100%" }} className={styles.inline}>
 							{array[0].map((numArr: number[]) => {
 								return numArr.map((num) => (
-									<div className={styles[num.sorted ? "green" : "box"]}>{num.value}</div>
+									<div className={num.sorted ? "green" : "box"}>{num.value}</div>
 								));
 							})}
 						</div>
@@ -323,46 +291,46 @@ const MergeSort: React.FC = () => {
 						>
 							<div className={styles.inline}>
 								{array[1][0]?.map((num) => (
-									<div className={styles[num.sorted ? "green" : "box"]}>{num.value}</div>
+									<div className={num.sorted? "green" : "box"}>{num.value}</div>
 								))}
 							</div>
 							<div className={styles.inline}>
 								{array[1][1]?.map((num) => (
-									<div className={styles[num.sorted ? "green" : "box"]}>{num.value}</div>
+									<div className={num.sorted ? "green" : "box"}>{num.value}</div>
 								))}
 							</div>
 							<div style={{ display: "grid", gridTemplateColumns: "1fr 1fr", direction: "ltr" }}>
 								<div className={styles.inline}>
 									{array[2][0]?.map((num) => (
-										<div className={styles[num.sorted ? "green" : "box"]}>{num.value}</div>
+										<div className={num.sorted ? "green" : "box"}>{num.value}</div>
 									))}
 								</div>
 								<div className={styles.inline}>
 									{array[2][1]?.map((num) => (
-										<div className={styles[num.sorted ? "green" : "box"]}>{num.value}</div>
+										<div className={num.sorted ? "green" : "box"}>{num.value}</div>
 									))}
 								</div>
 								<div style={{ display: "grid", gridTemplateColumns: "1fr 1fr" }}>
 									<div className={styles.inline}>
 										{array[3][0]?.map((num) => (
-											<div className={styles[num.sorted ? "green" : "box"]}>{num.value}</div>
+											<div className={num.sorted ? "green" : "box"}>{num.value}</div>
 										))}
 									</div>
 									<div className={styles.inline}>
 										{array[3][1]?.map((num) => (
-											<div className={styles[num.sorted ? "green" : "box"]}>{num.value}</div>
+											<div className={num.sorted ? "green" : "box"}>{num.value}</div>
 										))}
 									</div>
 								</div>
 								<div style={{ display: "grid", gridTemplateColumns: "1fr 1fr" }}>
 									<div className={styles.inline}>
 										{array[3][2]?.map((num) => (
-											<div className={styles[num.sorted ? "green" : "box"]}>{num.value}</div>
+											<div className={num.sorted ? "green" : "box"}>{num.value}</div>
 										))}
 									</div>
 									<div className={styles.inline}>
 										{array[3][3]?.map((num) => (
-											<div className={styles[num.sorted ? "green" : "box"]}>{num.value}</div>
+											<div className={num.sorted ? "green" : "box"}>{num.value}</div>
 										))}
 									</div>
 								</div>
@@ -371,35 +339,35 @@ const MergeSort: React.FC = () => {
 							<div style={{ display: "grid", gridTemplateColumns: "1fr 1fr", direction: "ltr" }}>
 								<div className={styles.inline}>
 									{array[2][2]?.map((num) => (
-										<div className={styles[num.sorted ? "green" : "box"]}>{num.value}</div>
+										<div className={num.sorted ? "green" : "box"}>{num.value}</div>
 									))}
 								</div>
 								<div className={styles.inline}>
 									{array[2][3]?.map((num) => (
-										<div className={styles[num.sorted ? "green" : "box"]}>{num.value}</div>
+										<div className={num.sorted ? "green" : "box"}>{num.value}</div>
 									))}
 								</div>
 								<div style={{ display: "grid", gridTemplateColumns: "1fr 1fr" }}>
 									<div className={styles.inline}>
 										{array[3][4]?.map((num) => (
-											<div className={styles[num.sorted ? "green" : "box"]}>{num.value}</div>
+											<div className={num.sorted ? "green" : "box"}>{num.value}</div>
 										))}
 									</div>
 									<div className={styles.inline}>
 										{array[3][5]?.map((num) => (
-											<div className={styles[num.sorted ? "green" : "box"]}>{num.value}</div>
+											<div className={num.sorted ? "green" : "box"}>{num.value}</div>
 										))}
 									</div>
 								</div>
 								<div style={{ display: "grid", gridTemplateColumns: "1fr 1fr" }}>
 									<div className={styles.inline}>
 										{array[3][6]?.map((num) => (
-											<div className={styles[num.sorted ? "green" : "box"]}>{num.value}</div>
+											<div className={num.sorted ? "green" : "box"}>{num.value}</div>
 										))}
 									</div>
 									<div className={styles.inline}>
 										{array[3][7]?.map((num) => (
-											<div className={styles[num.sorted ? "green" : "box"]}>{num.value}</div>
+											<div className={num.sorted ? "green" : "box"}>{num.value}</div>
 										))}
 									</div>
 								</div>
@@ -436,7 +404,9 @@ const MergeSort: React.FC = () => {
 					onClear,
 					speed,
 					setSpeed,
-					onFastPlay,
+					intervalID,
+					setIntervalID,
+					setFastPlay,
 					fastPlay,
 					enable,
 					onNext,
@@ -446,4 +416,4 @@ const MergeSort: React.FC = () => {
 	);
 };
 
-export default withTransition(MergeSort);
+export default (MergeSort);
