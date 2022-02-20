@@ -8,11 +8,11 @@ import { sortBy } from "lodash";
 import { defaultArray, onArrayChange, onArraySubmit } from "../../util/util";
 import Template from "../Template";
 
-const BinarySearch: React.FC = () => {
+const LinearSearch: React.FC = () => {
 	const [array, setArray] = useState([...sortBy(defaultArray)]);
-	const [dArray, setDArray] = useState([...sortBy(defaultArray)]);
-	const [mIndex, setMIndex] = useState(Math.floor(defaultArray.length / 2));
-	const [item, setItem] = useState(1);
+  const [currentIndex, setCurrentIndex] = useState(0);
+  const [item, setItem] = useState(1);
+  const [complete, setComplete] = useState(false);
 	const notifications = useNotifications();
 	const [userInput, setUserInput] = useState("");
 	const [searchInput, setSearchInput] = useState("");
@@ -22,40 +22,27 @@ const BinarySearch: React.FC = () => {
 	const [intervalID, setIntervalID] = useState<number>();
 	const onClear = () => {
 		setArray([...sortBy(defaultArray)]);
-		setDArray([...sortBy(defaultArray)]);
 		setUserInput("");
 		setEnable(false);
 		setFastPlay(false);
-		setMIndex(Math.floor(defaultArray.length / 2));
-		setItem(1);
 		setSearchInput("");
 		clearInterval(intervalID);
 	};
-	const binarySearch = (arr: number[], l: number, r: number, x: number): number => {
-		if (r >= l) {
-			const mid = l + Math.floor((r - l) / 2);
-			if (arr[mid] == x) return mid;
-			if (arr[mid] > x) return binarySearch(arr, l, mid - 1, x);
-			return binarySearch(arr, mid + 1, r, x);
-		}
-		return -1;
-	};
-	const onNext = () => {
-		let newArray: number[] = [];
-		if (array[mIndex] == item) {
-			notifications.showNotification({
-				message: `The Item Has Been Founded at index ${binarySearch(dArray, 0, dArray.length - 1, item)}`,
-				color: "teal",
-				style: { textAlign: "center" },
-				disallowClose: true,
-				icon: <FontAwesomeIcon icon={faCheck} />,
+  const onNext = () => {
+    
+    if (array[currentIndex] === item) {
+      notifications.showNotification({
+        message: `The Item Has Been Founded at index ${currentIndex}`,
+        color: "teal",
+        style: { textAlign: "center" },
+        disallowClose: true,
+        icon: <FontAwesomeIcon icon={faCheck} />,
 			});
-			setEnable(true);
-			newArray[0] = array[mIndex];
-			clearInterval(intervalID);
-			return;
-		} else if (array.length === 1) {
-			notifications.showNotification({
+      setEnable(true);
+      clearInterval(intervalID);
+      return;
+    } else if (currentIndex===array.length-1) {
+      notifications.showNotification({
 				message: "The Relevant Item Isn't in The Array",
 				color: "teal",
 				style: { textAlign: "center" },
@@ -63,18 +50,14 @@ const BinarySearch: React.FC = () => {
 				icon: <FontAwesomeIcon icon={faCheck} />,
 			});
 			setEnable(true);
-		} else if (array[mIndex] > item) {
-			newArray = [...array].slice(0, mIndex);
-		} else {
-			newArray = [...array].slice(mIndex, array.length);
-		}
-		setMIndex(Math.floor(newArray.length / 2));
-		setArray(newArray);
+			clearInterval(intervalID);
+    }
+    setCurrentIndex(currentIndex + 1);
 	};
 	const onSubmitInput = (value: any) => {
 		const regex = /[0-9]$/i;
 		if (regex.test(value)) {
-			setItem(value);
+			setItem(parseInt(value));
 			setSearchInput("");
 		} else {
 			notifications.showNotification({
@@ -102,14 +85,12 @@ const BinarySearch: React.FC = () => {
 		);
 		if (newArray) {
 			setArray([...sortBy(newArray)]);
-			setDArray([...sortBy(newArray)]);
-			setMIndex(Math.floor(newArray.length / 2));
 		}
 	};
 	return (
 		<>
 			<Template
-				headLine="Binary Search"
+				headLine="Linear Search"
 				inputComponent={
 					<>
 						<Input
@@ -171,7 +152,9 @@ const BinarySearch: React.FC = () => {
 						<Text className="searchText">Searching For : {item}</Text>
 						<div className={styles.inline}>
 							{array.map((num, index) => (
-								<div key={index} className={mIndex == index ? "green" : "box"}>{num}</div>
+								<div key={index} className={currentIndex == index ? "green" : "box"}>
+									{num}
+								</div>
 							))}
 						</div>
 					</div>
@@ -217,4 +200,4 @@ const BinarySearch: React.FC = () => {
 	);
 };
 
-export default BinarySearch;
+export default LinearSearch;

@@ -37,6 +37,14 @@ const Layout: React.FC = ({ children }): JSX.Element => {
 						mainText="Searching Algorithms"
 						subLinks={[
 							{ href: "/algorithms/search/binarysearch", text: "Binary Search" },
+							{ href: "/algorithms/search/linearsearch", text: "Linear Search" },
+						]}
+						setBarOpen={() => setOpened(!opened)}
+					/>
+					<MainLink
+						mainText="Encoding Algorithms"
+						subLinks={[
+							{ href: "/algorithms/encoding/runlength", text: "Run Length" },
 						]}
 						setBarOpen={() => setOpened(!opened)}
 					/>

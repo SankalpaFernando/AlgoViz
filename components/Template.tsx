@@ -38,35 +38,7 @@ const Template: React.FC<TemplateProps> = ({
 }) => {
 	const { onClear, speed, setSpeed, fastPlay, enable, onNext, intervalID, setIntervalID,setFastPlay } =
 		controls;
-	const onFastPlay = () => {
-		if (fastPlay) {
-			clearInterval(intervalID);
-		} else {
-			let XSpeed;
-			switch (speed) {
-				case 0.25:
-					XSpeed = 2000;
-					break;
-				case 0.5:
-					XSpeed = 1000;
-					break;
-				case 1.5:
-					XSpeed = 50;
-					break;
-				case 2:
-					XSpeed = 25;
-					break;
-				default:
-					XSpeed = 500;
-			}
-			const btnElement = document.getElementById("next-btn");
-			const intID = window.setInterval(() => {
-				btnElement?.click();
-			}, XSpeed);
-			setIntervalID(intID);
-		}
-		setFastPlay(!fastPlay);
-	};
+	
 	return (
 		<div className={styles.visualizer}>
 			<Text
@@ -85,10 +57,12 @@ const Template: React.FC<TemplateProps> = ({
 				onClear={() => onClear()}
 				speed={speed}
 				setSpeed={setSpeed}
-				onFastPlay={onFastPlay}
 				enable={enable}
 				onNext={onNext}
 				fastPlay={fastPlay}
+				intervalID={intervalID}
+				setIntervalID={setIntervalID}
+				setFastPlay={setFastPlay}
 			/>
 			<div className={styles.infoHolder}>
 				<Alert icon={<FontAwesomeIcon icon={faInfo} size="lg" />} title="Quickie Recap" color="teal">

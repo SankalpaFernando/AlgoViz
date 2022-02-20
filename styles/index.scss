@@ -14,6 +14,17 @@ body {
     animation-iteration-count: infinite;
     animation-timing-function: linear;
 }
+ .circle {
+	margin: 10px;
+	width: 75px;
+	height: 75px;
+	border: 2px solid rgb(104, 104, 104);
+	border-radius: 50%;
+	text-align: center;
+	justify-content: center;
+	align-items: center;
+	display: flex;
+}
  .box {
 	margin: 10px;
 	width: 75px;

@@ -20,29 +20,41 @@ export const isEqualOrder = (arrOne: number[], arrTwo: number[],param?:string) =
   return equal;
 };
 
-export const onArrayChange = (event: any,setUserInput:Function,showNotification:Function) => {
-	const regex = /[0-9]+,?$/i;
+export const onArrayChange = (
+	event: any,
+	setUserInput: Function,
+	showNotification: Function,
+	regex = /[0-9]+,?$/i,
+) => {
 	const { value } = event.target;
 	if (regex.test(value)) {
 		setUserInput(value);
 	} else {
-    showNotification();
+		showNotification();
 	}
 };
 
-export const onArraySubmit = (userInput:string,showNotification:Function,onClear:Function,customTemplate?:Function,rules:{max:number,min:number}):number[] => {
-	const regex = /[0-9]+,\d$/i;
-	const inputArray = userInput.split(",").map((str) => parseInt(str)).map(customTemplate);
+export const onArraySubmit = (
+	userInput: string,
+	showNotification: Function,
+	onClear: Function,
+	customTemplate?: Function,
+	rules: { max: number; min: number },
+	regex? = /[0-9]+,\d$/i,
+	setStr? = (str) => parseInt(str),
+	regexErrMsg = "Every , should be followed by a number"
+): number[] => {
+	const inputArray = userInput.split(",").map(setStr).map(customTemplate);
 	if (inputArray.length > rules.max || inputArray.length < rules.min) {
 		showNotification(`The length of the Array should be between ${rules.max} and ${rules.min}`);
-		return
+		return;
 	}
 	if (isEmpty(userInput)) {
 		showNotification("The Array should not be empty");
 		return;
 	}
 	if (!regex.test(userInput)) {
-    showNotification("Every , should be followed by a number");
+		showNotification(regexErrMsg);
 		return;
 	}
 	onClear();
