@@ -103,7 +103,7 @@ export default function HomePage() {
 					size="xl"
 					radius="xl"
 					variant="light"
-					onClick={() => navigate.push("/algorithms/bubblesort")}
+					onClick={() => navigate.push("/algorithms/sort/bubblesort")}
 				>
 					<FontAwesomeIcon
 						style={{
