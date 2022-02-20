@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { faPlay, faXmark } from "@fortawesome/free-solid-svg-icons";
+import { faCheck, faPlay, faXmark } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { Input, Kbd, Text } from "@mantine/core";
 import styles from "../../styles/components/runlength.module.scss";
@@ -46,7 +46,15 @@ const RunLength: React.FC = (): JSX.Element => {
 		}
 	};
 	const onNext = () => {
-		if (complete) {
+    if (complete) {
+      notifications.showNotification({
+							message: "The Encoding Process Has Been Completed",
+							color: "teal",
+							style: { textAlign: "center" },
+							disallowClose: true,
+							icon: <FontAwesomeIcon icon={faCheck} />,
+      });
+      setEnable(true);
 			return;
 		}
 		if (colIndex === array.length) {
@@ -131,20 +139,21 @@ const RunLength: React.FC = (): JSX.Element => {
 			</div>
 			{complete && (
 				<Text
-					size="lg"
+          size="xl"
+          weight={500}
 					align="center"
 					color={array.length / subArray.length < 1 ? "red" : "teal"}
 					style={{ width: "100%", textAlign: "center", margin: "2rem 0" }}
 				>
-					Compression Ratio {"   "} {array.length / subArray.length}
+					Compression Ratio {"   "} is {parseFloat(array.length / subArray.length)}
 				</Text>
 			)}
 			<div style={{ width: "80%", margin: "0 auto" }}>
 				<div style={{ display: "flex", width: "100%", marginBottom: "2rem" }}>
-					<Text align="center" style={{ width: "50%" }}>
+					<Text align="center" size="lg" style={{ width: "50%" }}>
 						Input
 					</Text>
-					<Text align="center" style={{ width: "50%" }}>
+					<Text align="center" size="lg" style={{ width: "50%" }}>
 						Output
 					</Text>
 				</div>
