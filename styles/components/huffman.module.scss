@@ -1,0 +1,17 @@
+.inline {
+	display: flex;
+	flex-direction: row;
+	flex-wrap: wrap;
+	justify-content: center;
+	width: 100%;
+  gap: 5rem;
+}
+.inputGroup {
+	text-align: center;
+	justify-content: center;
+	align-items: center;
+	display: flex;
+	width: 70%;
+	margin: 3rem auto !important;
+	flex-basis: 2rem;
+}

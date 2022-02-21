@@ -38,8 +38,9 @@ const RunLength: React.FC = (): JSX.Element => {
 			(num: string) => num,
 			{ max: 100, min: 2 },
 			/^\w+(?=(,?))(?:\1\w+)+$/gm,
-      (str) => str,
-      "Every , should be follwed by a character"
+			(str) => str,
+			"Input should only contains letters",
+			"",
 		);
 		if (newArray) {
 			setArray([...newArray]);
@@ -110,16 +111,16 @@ const RunLength: React.FC = (): JSX.Element => {
 							setUserInput,
 							() => {
 								notifications.showNotification({
-									message: "The Array must only contains numbers which separated with ,",
+									message: "The Array must only contains letters",
 									color: "red",
 									disallowClose: true,
 									icon: <FontAwesomeIcon icon={faXmark} />,
 								});
 							},
-							/\w/gm,
+							/[a-zA-Z]/gm,
 						)
 					}
-					placeholder="Input the Array with , Separated Numbers"
+					placeholder="Input the String"
 					size="lg"
 					style={{ width: "100%" }}
 					value={userInput}
@@ -139,13 +140,13 @@ const RunLength: React.FC = (): JSX.Element => {
 			</div>
 			{complete && (
 				<Text
-          size="xl"
-          weight={500}
+					size="xl"
+					weight={500}
 					align="center"
 					color={array.length / subArray.length < 1 ? "red" : "teal"}
 					style={{ width: "100%", textAlign: "center", margin: "2rem 0" }}
 				>
-					Compression Ratio {"   "} is {parseFloat(array.length / subArray.length)}
+					Compression Ratio {"   "} is {(array.length / subArray.length).toFixed(2)}
 				</Text>
 			)}
 			<div style={{ width: "80%", margin: "0 auto" }}>
