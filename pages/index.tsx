@@ -82,6 +82,7 @@ export default function HomePage() {
 				sx={{ display: "flex", justifyContent: "center", alignItems: "center" }}
 				mt={smallScreen ? 50 : 100}
 			>
+				<Text style={{ fontSize: "1.2rem", color: "#868e97" }}>Click to Start Your Journey</Text>
 			</Container>
 			<Container
 				sx={{ display: "flex", alignItems: "center", justifyContent: "center" }}
