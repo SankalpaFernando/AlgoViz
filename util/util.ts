@@ -34,17 +34,17 @@ export const onArrayChange = (
 	}
 };
 
-export const onArraySubmit = (
+export function onArraySubmit<T>(
 	userInput: string,
 	showNotification: Function,
 	onClear: Function,
 	customTemplate?: Function,
 	rules: { max: number; min: number },
-	regex? = /[0-9]+,\d$/i,
-	setStr? = (str) => parseInt(str),
+	regex = /[0-9]+,\d$/i,
+	setStr = (str) => parseInt(str),
 	regexErrMsg = "Every , should be followed by a number",
 	splitChar=","
-): number[] => {
+):T[]{
 	const inputArray = userInput.split(splitChar).map(setStr).map(customTemplate);
 	if (inputArray.length > rules.max || inputArray.length < rules.min) {
 		showNotification(`The length of the Array should be between ${rules.max} and ${rules.min}`);

@@ -46,6 +46,7 @@ const Layout: React.FC = ({ children }): JSX.Element => {
 						subLinks={[
 							{ href: "/algorithms/encoding/runlength", text: "Run Length" },
 							{ href: "/algorithms/encoding/huffman", text: "Huffman Encoding" },
+							{ href: "/algorithms/encoding/lzw", text: "LZW Encoding" },
 						]}
 						setBarOpen={() => setOpened(!opened)}
 					/>
