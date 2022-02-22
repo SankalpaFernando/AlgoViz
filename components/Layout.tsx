@@ -12,12 +12,8 @@ const Layout: React.FC = ({ children }): JSX.Element => {
 	const navigate = useRouter();
 	const theme = useMantineTheme();
 	const smallScreen = useSmallScreen();
-	const variants = {
-		hidden: { opacity: 0, x: -200, y: 0 },
-		enter: { opacity: 1, x: 0, y: 0 },
-		exit: { opacity: 0, x: 0, y: -100 },
-	};
-	const style = smallScreen && ({ width: "30%", margin: "0 auto" });
+	
+	const style = smallScreen && ({ width: "50%", margin: "0 auto" });
 	return (
 		<AppShell
 			navbarOffsetBreakpoint="md"
