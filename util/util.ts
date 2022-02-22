@@ -1,5 +1,8 @@
+/* eslint-disable @typescript-eslint/ban-types */
+/* eslint-disable @typescript-eslint/explicit-module-boundary-types */
 /* eslint-disable no-plusplus */
 /* eslint-disable @typescript-eslint/no-unused-vars */
+// eslint-disable-next-line @typescript-eslint/ban-types
 import { isEmpty, isEqual } from "lodash";
 
 export const isEqualOrder = (arrOne: number[], arrTwo: number[],param?:string) => {
@@ -38,14 +41,14 @@ export function onArraySubmit<T>(
 	userInput: string,
 	showNotification: Function,
 	onClear: Function,
-	customTemplate?: Function,
+	customTemplate = (num: string) => num,
 	rules: { max: number; min: number },
 	regex = /[0-9]+,\d$/i,
-	setStr = (str) => parseInt(str),
+	setStr = (str: string) => parseInt(str),
 	regexErrMsg = "Every , should be followed by a number",
-	splitChar=","
-):T[]{
-	const inputArray = userInput.split(splitChar).map(setStr).map(customTemplate);
+	splitChar = ",",
+): T[] | undefined {
+	const inputArray: T[] = userInput.split(splitChar).map(setStr).map(customTemplate);
 	if (inputArray.length > rules.max || inputArray.length < rules.min) {
 		showNotification(`The length of the Array should be between ${rules.max} and ${rules.min}`);
 		return;
@@ -60,7 +63,7 @@ export function onArraySubmit<T>(
 	}
 	onClear();
 	return inputArray;
-};
+}
 
 export const isDeepEmpty = (arr: number[]) => {
 	let empty = true;

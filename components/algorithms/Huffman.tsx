@@ -120,7 +120,7 @@ const Huffman: React.FC = (): JSX.Element => {
 			(num: string) => num,
 			{ max: 100, min: 2 },
 			/[a-zA-Z]/gm,
-			(str) => str,
+			(str:string) => str,
 			"Input should only contains letters",
 			"",
 		);

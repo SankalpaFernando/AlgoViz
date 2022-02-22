@@ -5,12 +5,8 @@ import { Input, Kbd, Anchor } from "@mantine/core";
 import { useNotifications } from "@mantine/notifications";
 import {
 	faPlay,
-	faRotate,
-	faAnglesRight,
-	faForward,
 	faCheck,
 	faXmark,
-	faInfo,
 } from "@fortawesome/free-solid-svg-icons";
 import { isEmpty } from "lodash";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
