@@ -412,4 +412,4 @@ const MergeSort: React.FC = () => {
 	);
 };
 
-export default (MergeSort);
+export default withTransition(MergeSort);

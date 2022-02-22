@@ -6,6 +6,7 @@ import { useNotifications } from "@mantine/notifications";
 import styles from "../../styles/components/huffman.module.scss";
 import { defaultString, onArrayChange, onArraySubmit, sort,arrayType,Node } from "../../util/util";
 import Controls from "../Controls";
+import withTransition from "../../util/withTransition";
 
 
 
@@ -281,4 +282,4 @@ const Huffman: React.FC = (): JSX.Element => {
 	);
 };
 
-export default Huffman;
+export default withTransition(Huffman);

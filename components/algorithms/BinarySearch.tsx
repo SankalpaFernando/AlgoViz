@@ -7,6 +7,7 @@ import styles from "../../styles/components/binarysearch.module.scss";
 import { sortBy } from "lodash";
 import { defaultArray, onArrayChange, onArraySubmit } from "../../util/util";
 import Template from "../Template";
+import withTransition from "../../util/withTransition";
 
 const BinarySearch: React.FC = () => {
 	const [array, setArray] = useState([...sortBy(defaultArray)]);
@@ -217,4 +218,4 @@ const BinarySearch: React.FC = () => {
 	);
 };
 
-export default BinarySearch;
+export default withTransition(BinarySearch);

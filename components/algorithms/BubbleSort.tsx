@@ -232,4 +232,4 @@ const BubbleSort: React.FC = (): JSX.Element => {
 	);
 };
 
-export default (BubbleSort);
+export default withTransition(BubbleSort);

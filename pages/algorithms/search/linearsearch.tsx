@@ -5,7 +5,7 @@ import LinearSearch from "../../../components/algorithms/LinearSearch";
 export default () => {
 	return (
 		<>
-			<LinearSearch />
+			{LinearSearch}
 		</>
 	);
 };

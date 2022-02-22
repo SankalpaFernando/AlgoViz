@@ -5,7 +5,7 @@ import BinarySearch from "../../../components/algorithms/BinarySearch";
 export default () => {
 	return (
 		<>
-			<BinarySearch />
+			{BinarySearch}
 		</>
 	);
 };

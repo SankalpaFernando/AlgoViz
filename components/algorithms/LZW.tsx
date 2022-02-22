@@ -5,6 +5,7 @@ import { useNotifications } from "@mantine/notifications";
 import React, { useState, useEffect } from "react";
 import styles from "../../styles/components/lzw.module.scss";
 import { defaultString, onArrayChange, onArraySubmit } from "../../util/util";
+import withTransition from "../../util/withTransition";
 import Controls from "../Controls";
 
 const LZW: React.FC = (): JSX.Element => {
@@ -229,4 +230,4 @@ const LZW: React.FC = (): JSX.Element => {
 	);
 };
 
-export default LZW;
+export default withTransition(LZW);

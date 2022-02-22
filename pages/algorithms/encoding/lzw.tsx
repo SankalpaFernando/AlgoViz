@@ -6,7 +6,7 @@ import LZW from "../../../components/algorithms/LZW";
 export default () => {
 	return (
 		<>
-			<LZW />
+			{LZW}
 		</>
 	);
 };

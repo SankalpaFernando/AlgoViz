@@ -178,4 +178,4 @@ const InsertionSort: React.FC = (): JSX.Element => {
 	);
 };
 
-export default (InsertionSort);
+export default withTransition(InsertionSort);

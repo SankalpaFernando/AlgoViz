@@ -6,6 +6,7 @@ import styles from "../../styles/components/runlength.module.scss";
 import { onArrayChange, onArraySubmit } from "../../util/util";
 import { useNotifications } from "@mantine/notifications";
 import Controls from "../Controls";
+import withTransition from "../../util/withTransition";
 type itemType = string | number;
 
 const RunLength: React.FC = (): JSX.Element => {
@@ -208,4 +209,4 @@ const RunLength: React.FC = (): JSX.Element => {
 	);
 };
 
-export default RunLength;
+export default withTransition(RunLength);

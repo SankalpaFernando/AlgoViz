@@ -4,5 +4,5 @@
 import InsertionSort from "../../../components/algorithms/InsertionSort";
 
 export default () => {
-	return <><InsertionSort/></>;
+	return <>{InsertionSort}</>;
 };

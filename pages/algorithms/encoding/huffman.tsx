@@ -6,7 +6,7 @@ import Huffman from "../../../components/algorithms/Huffman";
 export default () => {
 	return (
 		<>
-			<Huffman/>
+			{Huffman}
 		</>
 	);
 };
