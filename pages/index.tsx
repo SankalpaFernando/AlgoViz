@@ -13,13 +13,6 @@ export default function HomePage() {
 
 	return (
 		<>
-			<Head>
-				<title>AlgoViz 🚀</title>
-				<meta name="viewport" content="width=720"></meta>
-				<link rel="preconnect" href="https://fonts.googleapis.com" />
-				<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-				<link href="https://fonts.googleapis.com/css2?family=Nunito&display=swap" rel="stylesheet" />
-			</Head>
 			<Title
 				sx={{
 					fontSize: smallScreen ? 40 : 120,
