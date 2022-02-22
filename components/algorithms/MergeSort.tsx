@@ -13,6 +13,7 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import Template from "../Template";
 import { isEqualOrder, onArrayChange, onArraySubmit, isDeepEmpty } from "../../util/util";
 import styles from "../../styles/components/mergesort.module.scss";
+import withTransition from "../../util/withTransition";
 
 type defaultArrayType = {
 	value: number | undefined,
@@ -277,9 +278,7 @@ const MergeSort: React.FC = () => {
 					<>
 						<div style={{ width: "100%" }} className={styles.inline}>
 							{array[0].map((numArr: number[]) => {
-								return numArr.map((num) => (
-									<div className={num.sorted ? "green" : "box"}>{num.value}</div>
-								));
+								return numArr.map((num) => <div className={num.sorted ? "green" : "box"}>{num.value}</div>);
 							})}
 						</div>
 						<div
@@ -287,7 +286,7 @@ const MergeSort: React.FC = () => {
 						>
 							<div className={styles.inline}>
 								{array[1][0]?.map((num) => (
-									<div className={num.sorted? "green" : "box"}>{num.value}</div>
+									<div className={num.sorted ? "green" : "box"}>{num.value}</div>
 								))}
 							</div>
 							<div className={styles.inline}>
@@ -375,23 +374,25 @@ const MergeSort: React.FC = () => {
 				inputClassname="inputGroup"
 				infoComponent={
 					<>
-						Merge Sort is the very basic mechanism that been used to sort an Array. Since the Bubble Sort
-						Algorithm is simple to implement it has been used to introduce the concept of sorting. <br />
+						Merge Sort is using Divide and Conquer Mechanism in order to sort an array. It simply divides
+						the array into two sub arrays and call the algorithm to both sub arrays and sort them.Finally
+						the sorted sub arrays get merged
+						<br />
 						<br />
 						<b>Best Case Time Complexity :</b>{" "}
 						<b>
-							<i>O(n)</i>{" "}
+							{" "}
+							<i>O(n*log(n))</i>{" "}
 						</b>{" "}
-						<i>When array is already sorted</i>
 						<br />
 						<b>Worst and Average Case Time Complexity :</b>{" "}
 						<b>
-							<i>O(n*n)</i>{" "}
+							{" "}
+							<i>O(n*log(n))</i>{" "}
 						</b>{" "}
-						<i>When array is reversely sorted</i>
 						<br />
 						<br />{" "}
-						<Anchor href="https://www.geeksforgeeks.org/bubble-sort/" target="_blank">
+						<Anchor href="https://www.geeksforgeeks.org/merge-sort/" target="_blank">
 							For More Info{" "}
 						</Anchor>
 					</>

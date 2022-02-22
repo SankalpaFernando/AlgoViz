@@ -64,7 +64,7 @@ const Template: React.FC<TemplateProps> = ({
 				setIntervalID={setIntervalID}
 				setFastPlay={setFastPlay}
 			/>
-			<div className={styles.infoHolder}>
+			<div className="infoHolder">
 				<Alert icon={<FontAwesomeIcon icon={faInfo} size="lg" />} title="Quickie Recap" color="teal">
 					{infoComponent}
 				</Alert>

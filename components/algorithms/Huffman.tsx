@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from "react";
-import { faCheck, faPlay, faXmark } from "@fortawesome/free-solid-svg-icons";
+import { faCheck, faInfo, faPlay, faXmark } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { Input, Kbd, Table, Text } from "@mantine/core";
+import { Alert, Anchor, Input, Kbd, Table, Text } from "@mantine/core";
 import { useNotifications } from "@mantine/notifications";
 import styles from "../../styles/components/huffman.module.scss";
 import { defaultString, onArrayChange, onArraySubmit, sort,arrayType,Node } from "../../util/util";
@@ -205,19 +205,21 @@ const Huffman: React.FC = (): JSX.Element => {
 			>
 				{currentString}
 			</Text>
-      {complete && <Text
-        style={{ marginBottom: "1.4rem" }}
-        size="xl"
-        align="center"
-        variant="gradient"
-        gradient={{ from: "green", to: "teal", deg: 45 }}
-      >
-        Compression Ratio{" "}
-        {(
-          (array.reduce((prev, curr) => prev + curr.value, 0) * 7) /
-          array.reduce((prev, curr) => prev + curr.value * curr.code?.length, 0)
-        ).toFixed(2)}
-      </Text>}
+			{complete && (
+				<Text
+					style={{ marginBottom: "1.4rem" }}
+					size="xl"
+					align="center"
+					variant="gradient"
+					gradient={{ from: "green", to: "teal", deg: 45 }}
+				>
+					Compression Ratio{" "}
+					{(
+						(array.reduce((prev, curr) => prev + curr.value, 0) * 7) /
+						array.reduce((prev, curr) => prev + curr.value * curr.code?.length, 0)
+					).toFixed(2)}
+				</Text>
+			)}
 			<div
 				style={{
 					width: "80%",
@@ -278,6 +280,26 @@ const Huffman: React.FC = (): JSX.Element => {
 					setFastPlay,
 				}}
 			/>
+			<div className="infoHolder">
+				<Alert icon={<FontAwesomeIcon icon={faInfo} size="lg" />} title="Quickie Recap" color="teal">
+					<>
+						Huffman coding is a lossless data compression algorithm. The idea is to assign variable-length
+						codes to input characters, lengths of the assigned codes are based on the frequencies of
+						corresponding characters. The most frequent character gets the smallest code and the least
+						frequent character gets the largest code.
+						<br />
+						<br />
+						Although Huffman Encoding Algorithm is capable of giving the best tree for a given input, in
+						the context of data transmission we need to transmit the generated tree in prior to the data
+						transmission
+						<br />
+						<br />
+						<Anchor href="https://www.geeksforgeeks.org/huffman-coding-greedy-algo-3/" target="_blank">
+							For More Info{" "}
+						</Anchor>
+					</>
+				</Alert>
+			</div>
 		</div>
 	);
 };

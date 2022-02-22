@@ -69,3 +69,13 @@ body {
     50%  { transform: translate(0, 25px); }
     100%   { transform: translate(0, 1px); }   
 }
+.infoHolder {
+	width: 40%;
+	margin: 3rem auto !important;
+}
+
+@media screen and (max-width: 1350px) {
+	.infoHolder {
+		width: 70%;
+	}
+}

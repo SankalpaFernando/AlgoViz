@@ -141,23 +141,22 @@ const InsertionSort: React.FC = (): JSX.Element => {
 				inputClassname="inputGroup"
 				infoComponent={
 					<>
-						Bubble Sort is the very basic mechanism that been used to sort an Array. Since the Bubble Sort
-						Algorithm is simple to implement it has been used to introduce the concept of sorting. <br />
+						Insertion sort is a simple sorting algorithm that works similar to the way you sort playing
+						cards in your hands. The array is virtually split into a sorted and an unsorted part. Values
+						from the unsorted part are picked and placed at the correct position in the sorted part <br />
 						<br />
 						<b>Best Case Time Complexity :</b>{" "}
 						<b>
 							<i>O(n)</i>{" "}
 						</b>{" "}
-						<i>When array is already sorted</i>
 						<br />
 						<b>Worst and Average Case Time Complexity :</b>{" "}
 						<b>
-							<i>O(n*n)</i>{" "}
+							<i>O(n*2)</i>{" "}
 						</b>{" "}
-						<i>When array is reversely sorted</i>
 						<br />
 						<br />{" "}
-						<Anchor href="https://www.geeksforgeeks.org/bubble-sort/" target="_blank">
+						<Anchor href="https://www.geeksforgeeks.org/insertion-sort/" target="_blank">
 							For More Info{" "}
 						</Anchor>
 					</>

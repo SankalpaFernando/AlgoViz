@@ -164,20 +164,19 @@ const LinearSearch: React.FC = () => {
 				inputClassname="searchInputGroup"
 				infoComponent={
 					<>
-						Bubble Sort is the very basic mechanism that been used to sort an Array. Since the Bubble Sort
-						Algorithm is simple to implement it has been used to introduce the concept of sorting. <br />
+						Linear Search is the basic and simplest form of searching algorithms.It search through the
+						array by hopping from index to next index until the relevant item is getting found.
+						<br />
 						<br />
 						<b>Best Case Time Complexity :</b>{" "}
 						<b>
 							<i>O(n)</i>{" "}
 						</b>{" "}
-						<i>When array is already sorted</i>
 						<br />
 						<b>Worst and Average Case Time Complexity :</b>{" "}
 						<b>
-							<i>O(n*n)</i>{" "}
+							<i>O(n)</i>{" "}
 						</b>{" "}
-						<i>When array is reversely sorted</i>
 						<br />
 						<br />{" "}
 						<Anchor href="https://www.geeksforgeeks.org/bubble-sort/" target="_blank">

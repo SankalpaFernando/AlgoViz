@@ -1,7 +1,7 @@
 import React, { useState } from "react";
-import { faCheck, faPlay, faXmark } from "@fortawesome/free-solid-svg-icons";
+import { faCheck, faInfo, faPlay, faXmark } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { Input, Kbd, Text } from "@mantine/core";
+import { Alert, Anchor, Input, Kbd, Text } from "@mantine/core";
 import styles from "../../styles/components/runlength.module.scss";
 import { onArrayChange, onArraySubmit } from "../../util/util";
 import { useNotifications } from "@mantine/notifications";
@@ -204,6 +204,26 @@ const RunLength: React.FC = (): JSX.Element => {
 						setFastPlay,
 					}}
 				/>
+				<div className="infoHolder">
+					<Alert icon={<FontAwesomeIcon icon={faInfo} size="lg" />} title="Quickie Recap" color="teal">
+						<>
+							Run-length encoding (RLE) is a form of lossless data compression in which runs of data
+							(sequences in which the same data value occurs in many consecutive data elements) are stored
+							as a single data value and count, rather than as the original run. This is most efficient on
+							data that contains many such runs
+							<br />
+							<br />
+							However, RLE only gives efficient output when there exists lot of repetitive data like
+							background colors and tends to give negative compression ratios when its come to distinct
+							data such as photographic images
+							<br />
+							<br />
+							<Anchor href="https://www.geeksforgeeks.org/run-length-encoding/" target="_blank">
+								For More Info{" "}
+							</Anchor>
+						</>
+					</Alert>
+				</div>
 			</div>
 		</div>
 	);

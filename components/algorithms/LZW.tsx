@@ -1,6 +1,6 @@
-import { faCheck, faPlay, faXmark } from "@fortawesome/free-solid-svg-icons";
+import { faCheck, faInfo, faPlay, faXmark } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { Input, Kbd, Table, Text } from "@mantine/core";
+import { Alert, Anchor, Input, Kbd, Table, Text } from "@mantine/core";
 import { useNotifications } from "@mantine/notifications";
 import React, { useState, useEffect } from "react";
 import styles from "../../styles/components/lzw.module.scss";
@@ -223,8 +223,28 @@ const LZW: React.FC = (): JSX.Element => {
 						setFastPlay,
 					}}
 				/>
-
-				<div style={{ marginBottom: "5rem" }}></div>
+				<div className="infoHolder">
+					<Alert icon={<FontAwesomeIcon icon={faInfo} size="lg" />} title="Quickie Recap" color="teal">
+						<>
+							LZW compression works by reading a sequence of symbols, grouping the symbols into strings,
+							and converting the strings into codes. Because the codes take up less space than the strings
+							they replace, we get compression
+							<br />
+							<br />
+							In addition, the both encoder and decoder of the LZW algorithm are capable of building their
+							own data tables thus, there is no need of transmitting the data tree in prior to the data
+							transmission
+							<br />
+							<br />
+							<Anchor
+								href="https://www.geeksforgeeks.org/lzw-lempel-ziv-welch-compression-technique/"
+								target="_blank"
+							>
+								For More Info{" "}
+							</Anchor>
+						</>
+					</Alert>
+				</div>
 			</div>
 		</div>
 	);

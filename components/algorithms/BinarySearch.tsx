@@ -172,7 +172,9 @@ const BinarySearch: React.FC = () => {
 						<Text className="searchText">Searching For : {item}</Text>
 						<div className={styles.inline}>
 							{array.map((num, index) => (
-								<div key={index} className={mIndex == index ? "green" : "box"}>{num}</div>
+								<div key={index} className={mIndex == index ? "green" : "box"}>
+									{num}
+								</div>
 							))}
 						</div>
 					</div>
@@ -181,20 +183,20 @@ const BinarySearch: React.FC = () => {
 				inputClassname="searchInputGroup"
 				infoComponent={
 					<>
-						Bubble Sort is the very basic mechanism that been used to sort an Array. Since the Bubble Sort
-						Algorithm is simple to implement it has been used to introduce the concept of sorting. <br />
+						Binary Search is a searching algorithm used in a sorted array by repeatedly dividing the
+						search interval in half. The idea of binary search is to use the information that the array is
+						sorted and reduce the time complexity to O(Log n)
+						<br />
 						<br />
 						<b>Best Case Time Complexity :</b>{" "}
 						<b>
-							<i>O(n)</i>{" "}
+							<i>O(1)</i>{" "}
 						</b>{" "}
-						<i>When array is already sorted</i>
 						<br />
 						<b>Worst and Average Case Time Complexity :</b>{" "}
 						<b>
-							<i>O(n*n)</i>{" "}
+							<i>O(log n)</i>{" "}
 						</b>{" "}
-						<i>When array is reversely sorted</i>
 						<br />
 						<br />{" "}
 						<Anchor href="https://www.geeksforgeeks.org/bubble-sort/" target="_blank">
