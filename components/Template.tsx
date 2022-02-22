@@ -7,21 +7,23 @@ import styles from "../styles/components/template.module.scss";
 import { faInfo } from "@fortawesome/free-solid-svg-icons";
 
 interface TemplateProps {
-  headLine: string;
-  inputComponent: React.FC;
-  elementComponent: JSX.Element;
-  elementClassname: string;
-  inputClassname: string;
-  infoComponent: React.FC;
-  controls: {
-    onClear: Function,
-    speed: number,
-    setSpeed: Function,
-    onFastPlay: Function,
-    fastPlay: boolean,
-    enable: boolean,
-    onNext: Function
-  }
+	headLine: string;
+	inputComponent: React.FC;
+	elementComponent: JSX.Element;
+	elementClassname: string;
+	inputClassname: string;
+	infoComponent: React.FC;
+	controls: {
+		onClear: Function;
+		speed: number;
+		setSpeed: Function;
+		fastPlay: boolean;
+		enable: boolean;
+		onNext: Function;
+		intervalID: number | undefined;
+		setIntervalID: Function;
+		setFastPlay:Function
+	};
 }
 
 
@@ -34,8 +36,9 @@ const Template: React.FC<TemplateProps> = ({
 	infoComponent,
 	controls,
 }) => {
-	const { onClear, speed, setSpeed, onFastPlay, fastPlay, enable, onNext } =
+	const { onClear, speed, setSpeed, fastPlay, enable, onNext, intervalID, setIntervalID,setFastPlay } =
 		controls;
+	
 	return (
 		<div className={styles.visualizer}>
 			<Text
@@ -54,12 +57,14 @@ const Template: React.FC<TemplateProps> = ({
 				onClear={() => onClear()}
 				speed={speed}
 				setSpeed={setSpeed}
-				onFastPlay={onFastPlay}
 				enable={enable}
 				onNext={onNext}
 				fastPlay={fastPlay}
+				intervalID={intervalID}
+				setIntervalID={setIntervalID}
+				setFastPlay={setFastPlay}
 			/>
-			<div className={styles.infoHolder}>
+			<div className="infoHolder">
 				<Alert icon={<FontAwesomeIcon icon={faInfo} size="lg" />} title="Quickie Recap" color="teal">
 					{infoComponent}
 				</Alert>

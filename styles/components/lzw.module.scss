@@ -1,0 +1,17 @@
+.inputGroup {
+	text-align: center;
+	justify-content: center;
+	align-items: center;
+	display: flex;
+	width: 70%;
+	margin: 3rem auto !important;
+	flex-basis: 2rem;
+}
+
+.inline {
+	display: grid;
+  grid-template-columns: repeat(4,1fr);
+  width: 80%;
+  margin: 0 auto;
+  height: fit-content;
+}

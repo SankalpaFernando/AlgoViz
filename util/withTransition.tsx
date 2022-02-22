@@ -7,9 +7,9 @@ type withTransitionProps = {
 
 const withTransition: React.FC<withTransitionProps> = (Component):JSX.Element => {
   const variants = {
-    hidden: { opacity: 0, x: 100, y: 0 },
-    enter: { opacity: 1, x: -10, y: 0 },
-    exit: { opacity: 0, x: -100, y: 0 },
+    hidden: { opacity: 0, x: 0, y: 100 },
+    enter: { opacity: 1, x: 0, y: 0 },
+    exit: { opacity: 0, x: 0, y: -100 },
   };
   return (
 			<>
@@ -20,7 +20,7 @@ const withTransition: React.FC<withTransitionProps> = (Component):JSX.Element =>
 					exit="exit"
 					transition={{
 						delay: .5,
-						y: { type: "spring", stiffness: 100 },
+						x: { type: "spring", stiffness: 50 },
 						default: { duration: 1 },
 					}}
 				>

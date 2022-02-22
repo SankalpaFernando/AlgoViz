@@ -13,13 +13,6 @@ export default function HomePage() {
 
 	return (
 		<>
-			<Head>
-				<title>AlgoViz 🚀</title>
-				<meta name="viewport" content="width=720"></meta>
-				<link rel="preconnect" href="https://fonts.googleapis.com" />
-				<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-				<link href="https://fonts.googleapis.com/css2?family=Nunito&display=swap" rel="stylesheet" />
-			</Head>
 			<Title
 				sx={{
 					fontSize: smallScreen ? 40 : 120,
@@ -89,7 +82,6 @@ export default function HomePage() {
 				sx={{ display: "flex", justifyContent: "center", alignItems: "center" }}
 				mt={smallScreen ? 50 : 100}
 			>
-				<Text style={{ fontSize: "1.2rem", color: "#868e97" }}>Click to Start Your Journey</Text>
 			</Container>
 			<Container
 				sx={{ display: "flex", alignItems: "center", justifyContent: "center" }}
@@ -103,7 +95,7 @@ export default function HomePage() {
 					size="xl"
 					radius="xl"
 					variant="light"
-					onClick={() => navigate.push("/algorithms/bubblesort")}
+					onClick={() => navigate.push("/algorithms/sort/bubblesort")}
 				>
 					<FontAwesomeIcon
 						style={{

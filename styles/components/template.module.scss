@@ -7,6 +7,9 @@
 	width: 70%;
 	margin: 1rem auto !important;
 }
+.inlineSearch{
+	display: grid;
+}
 .inputGroup {
 	text-align: center;
 	justify-content: center;
@@ -16,18 +19,15 @@
 	margin: 3rem auto !important;
 	flex-basis: 2rem;
 }
+.searchInputGroup {
+	display: grid;
+	grid-template-columns: 2fr 1fr;
+	width: 70%;
+	gap: 2rem;
+	margin: 3rem auto !important;
+}
 @media screen and (max-width: 500px) {
 	.inputGroup {
 		width: 90% !important;
-	}
-}
-.infoHolder {
-	width: 40%;
-	margin: 3rem auto !important;
-}
-
-@media screen and (max-width: 1350px) {
-	.infoHolder {
-		width: 70%;
 	}
 }

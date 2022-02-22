@@ -13,7 +13,51 @@ body {
     animation-iteration-count: infinite;
     animation-timing-function: linear;
 }
- 
+.view-box{
+	margin: 10px;
+	width: 75px;
+	height: 75px;
+	text-align: center;
+	justify-content: center;
+	align-items: center;
+	display: flex;
+}
+.circle {
+	@extend .view-box;
+	border: 2px solid rgb(104, 104, 104);
+	border-radius: 50%;
+}
+ .box {
+	@extend .view-box;
+	border: 2px solid rgb(104, 104, 104);
+	border-radius: 10px;
+}
+.yellow {
+	@extend .box;
+	border: 0;
+	background-color: #ffec99;
+}
+.blue {
+	@extend .box;
+	border: 0;
+	background-color: #A5D8FF;
+}
+.red {
+	@extend .box;
+	background-color: #FFD8A8;
+	border: 0;
+}
+.green {
+	@extend .box;
+	border: 0;
+	background-color: #63e6be;
+	color: #fff !important;
+}
+.searchText{
+    text-align: center;
+    font-size: 1.2rem;
+    margin: 1.4rem 0;
+}
 @keyframes floating {
     0% { transform: translate(0,  0px); }
     50%  { transform: translate(0, 15px); }
@@ -23,4 +67,14 @@ body {
     0% { transform: translate(0,  -1px); }
     50%  { transform: translate(0, 25px); }
     100%   { transform: translate(0, 1px); }   
+}
+.infoHolder {
+	width: 40%;
+	margin: 3rem auto !important;
+}
+
+@media screen and (max-width: 1350px) {
+	.infoHolder {
+		width: 70%;
+	}
 }
