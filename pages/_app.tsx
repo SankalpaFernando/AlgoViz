@@ -19,6 +19,10 @@ export default function App(props: AppProps) {
 			<Head>
 				<title>AlgoViz 🚀</title>
 				<meta name="viewport" content="width=900"></meta>
+				<meta name="viewport" content="width=720"></meta>
+				<link rel="preconnect" href="https://fonts.googleapis.com" />
+				<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+				<link href="https://fonts.googleapis.com/css2?family=Nunito&display=swap" rel="stylesheet" />
 			</Head>
 			<MantineProvider
 				theme={{
@@ -30,7 +34,7 @@ export default function App(props: AppProps) {
 				<NotificationsProvider position="top-center">
 					{router.route === "/" ? (
 						<motion.main
-							variants={variants} 
+							variants={variants}
 							initial="hidden"
 							animate="enter"
 							exit="exit"
@@ -44,12 +48,11 @@ export default function App(props: AppProps) {
 							<Component {...pageProps} />
 						</motion.main>
 					) : (
-							<Layout>
-					<AnimatePresence exitBeforeEnter>
-								
-							<Component {...pageProps} key={router.route} />
-						</AnimatePresence>
-							</Layout>
+						<Layout>
+							<AnimatePresence exitBeforeEnter>
+								<Component {...pageProps} key={router.route} />
+							</AnimatePresence>
+						</Layout>
 					)}
 				</NotificationsProvider>
 			</MantineProvider>
