@@ -14,6 +14,7 @@ import Template from "../Template";
 import { isEqualOrder, onArrayChange, onArraySubmit, isDeepEmpty } from "../../util/util";
 import styles from "../../styles/components/mergesort.module.scss";
 import withTransition from "../../util/withTransition";
+import Header from "../Header";
 
 type defaultArrayType = {
 	value: number | undefined,
@@ -242,6 +243,7 @@ const MergeSort: React.FC = () => {
 	};
 	return (
 		<>
+			<Header title="Merge Sort" link="sort/mergesort" />
 			<Template
 				headLine="Merge Sort"
 				inputComponent={

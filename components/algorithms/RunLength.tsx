@@ -7,6 +7,7 @@ import { onArrayChange, onArraySubmit } from "../../util/util";
 import { useNotifications } from "@mantine/notifications";
 import Controls from "../Controls";
 import withTransition from "../../util/withTransition";
+import Header from "../Header";
 type itemType = string | number;
 
 const RunLength: React.FC = (): JSX.Element => {
@@ -93,7 +94,8 @@ const RunLength: React.FC = (): JSX.Element => {
 	};
 
 	return (
-		<div>
+		<>
+			<Header title="RunLength Encoding" link="encoding/runlength" />
 			<Text
 				align="center"
 				variant="gradient"
@@ -225,7 +227,7 @@ const RunLength: React.FC = (): JSX.Element => {
 					</Alert>
 				</div>
 			</div>
-		</div>
+		</>
 	);
 };
 

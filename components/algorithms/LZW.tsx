@@ -7,6 +7,7 @@ import styles from "../../styles/components/lzw.module.scss";
 import { defaultString, onArrayChange, onArraySubmit } from "../../util/util";
 import withTransition from "../../util/withTransition";
 import Controls from "../Controls";
+import Header from "../Header";
 
 const LZW: React.FC = (): JSX.Element => {
 	const notifications = useNotifications();
@@ -102,7 +103,9 @@ const LZW: React.FC = (): JSX.Element => {
 	};
 
 	return (
-		<div>
+		<>
+			<Header title="LZW Encoding" link="encoding/lzw" />
+			
 			<Text
 				align="center"
 				variant="gradient"
@@ -246,7 +249,7 @@ const LZW: React.FC = (): JSX.Element => {
 					</Alert>
 				</div>
 			</div>
-		</div>
+		</>
 	);
 };
 

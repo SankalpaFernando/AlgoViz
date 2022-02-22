@@ -8,6 +8,7 @@ import { sortBy } from "lodash";
 import { defaultArray, onArrayChange, onArraySubmit } from "../../util/util";
 import Template from "../Template";
 import withTransition from "../../util/withTransition";
+import Header from "../Header";
 
 const BinarySearch: React.FC = () => {
 	const [array, setArray] = useState([...sortBy(defaultArray)]);
@@ -109,6 +110,10 @@ const BinarySearch: React.FC = () => {
 	};
 	return (
 		<>
+			<Header
+				title="Binary Search"
+				link="search/binarysearch"
+			/>
 			<Template
 				headLine="Binary Search"
 				inputComponent={
