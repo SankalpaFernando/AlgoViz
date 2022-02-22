@@ -6,6 +6,7 @@ import { useNotifications } from "@mantine/notifications";
 import { defaultArray, onArrayChange, onArraySubmit } from "../../util/util";
 import withTransition from "../../util/withTransition";
 import Template from "../Template";
+import Header from "../Header";
 
 const InsertionSort: React.FC = (): JSX.Element => {
 	const notifications = useNotifications();
@@ -84,6 +85,7 @@ const InsertionSort: React.FC = (): JSX.Element => {
 	};
 	return (
 		<>
+			<Header title="Insertion Sort" link="sort/insertionsort" />
 			<Template
 				headLine="Insertion Sort"
 				inputComponent={

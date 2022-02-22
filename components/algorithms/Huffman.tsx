@@ -7,6 +7,7 @@ import styles from "../../styles/components/huffman.module.scss";
 import { defaultString, onArrayChange, onArraySubmit, sort,arrayType,Node } from "../../util/util";
 import Controls from "../Controls";
 import withTransition from "../../util/withTransition";
+import Header from "../Header";
 
 
 
@@ -150,7 +151,11 @@ const Huffman: React.FC = (): JSX.Element => {
 		}
 	};
 	return (
-		<div>
+		<>
+			<Header
+				title="Huffman Encoding"
+				link="encoding/huffman"
+			/>
 			<Text
 				align="center"
 				variant="gradient"
@@ -300,7 +305,7 @@ const Huffman: React.FC = (): JSX.Element => {
 					</>
 				</Alert>
 			</div>
-		</div>
+		</>
 	);
 };
 

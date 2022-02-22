@@ -35,6 +35,7 @@ import Template from "../Template";
 import styles from "../../styles/components/bubblesort.module.scss";
 import { isEqualOrder, onArrayChange, defaultArray, onArraySubmit } from "../../util/util";
 import withTransition from "../../util/withTransition";
+import Header from "../Header";
 
 const BubbleSort: React.FC = (): JSX.Element => {
 	const notifications = useNotifications();
@@ -144,6 +145,11 @@ const BubbleSort: React.FC = (): JSX.Element => {
 		}
 	};
 	return (
+		<>
+		<Header
+				title="Bubble Sort"
+				link="sort/bubblesort"
+			/>
 		<Template
 			headLine="Bubble Sort"
 			inputComponent={
@@ -228,7 +234,8 @@ const BubbleSort: React.FC = (): JSX.Element => {
 				enable,
 				onNext,
 			}}
-		/>
+			/>
+			</>
 	);
 };
 
